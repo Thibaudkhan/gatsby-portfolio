@@ -8,7 +8,7 @@
     position: relative;
 }
 
-.mars{
+/*.mars{
     height: 50vh;
     width: 33%;
     background-image: url("../images/mars.png");
@@ -16,20 +16,30 @@
     background-repeat: no-repeat;
     position: absolute;
 
-}
+}*/
 
-.phobos{
-    height: 25vh;
-    width: 33%;
-    background-image: url("../images/phobos.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
 
-}
 
 
 /*          */
+
+#mars, .planet {
+    position: absolute;
+    /*top: 50%;*/
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+}
+
+#mars {
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotateX(-75deg);
+}
 
 
 /* Background */
@@ -49,18 +59,26 @@ body {
     background-size: cover;
 }
 
-#galaxy {
-    position: relative;
+#system-alpha {
+    position: absolute;
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     transform: rotateX(75deg);
     transform-style: preserve-3d;
     bottom: 0;
 }
+#system-beta {
+    position: absolute;
+    width: 30%;
+    height: 270px;
+    transform: rotateX(75deg);
+    transform-style: preserve-3d;
+}
+
 
 #earth, .planet {
     position: absolute;
-    top: 50%;
+    /*top: 50%;*/
     left: 50%;
     width: 1em;
     height: 1em;
@@ -85,7 +103,7 @@ body {
 }
 
 .planet {
-    background-color: #202020;
+    background-color: rgba(255, 255, 255, 0);
     background-repeat: no-repeat;
     background-size: cover;
     animation-iteration-count: infinite;
@@ -93,10 +111,14 @@ body {
 }
 
 .orbit {
+    border-radius: 50%;
+    /*background-color: white;*/
     position: absolute;
     top: 50%;
     left: 50%;
+    /*transform: rotateY(200deg);*/
     animation-name: orbit;
+
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     transform-style: preserve-3d;
@@ -104,26 +126,46 @@ body {
 
 /* Animations */
 @keyframes orbit {
-    0%   { transform: rotateZ(0deg);
+    0%   {
+        /*transform: rotate3d(0, 0, 0, -365deg);*/
+        transform: rotateZ(0deg);
+    ;
+
 
     }
-    100% { transform: rotateZ(-360deg); }
+    100% {
+        /*transform: rotate3d(-365, -365, -365, -365deg);*/
+        transform: rotateZ(-365deg);
+    }
 
 
 }
 
 @keyframes invert {
-    0%   { transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg); }
+    0%   { transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg); }
     100% { transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg); }
 
 }
 
 /* Orbit sizes */
 #moon.orbit {
-    width: 12em;
-    height: 12em;
-    margin-top: -6em;
-    margin-left: -6em;
+    width: 10em;
+    height: 10em;
+    margin-top: -5em;
+    margin-left: -5em;
+}
+
+.satellite.orbit{
+    width: 10em;
+    height: 10em;
+    margin-top: -5em;
+    margin-left: -5em;
+}
+#deimos.orbit{
+    width: 8em;
+    height: 0em;
+    margin-top: 0em;
+    margin-left: -4em;
 }
 
 /* Planet starting positions */
@@ -133,18 +175,46 @@ body {
     border: solid 3px red;
 
 }
+#phobos .pos {
+    left: 0%;
+    top: -1px;
+    border: solid 3px red;
+
+}
+#deimos .pos {
+    left: 0%;
+    top: -1px;
+    border: solid 3px rgba(255, 255, 255, 0);
+
+}
 
 /* Planet animation durations */
 #moon.orbit, #moon .pos {
     animation-duration: 8s;
 }
+#phobos.orbit, #phobos .pos {
+    animation-duration: 6s;
+}
+#deimos.orbit, #deimos .pos {
+    animation-duration: 5s;
+}
 
 /* Planet sizes */
 #earth {
+    font-size: 58em;
+}
+#mars
+ {
     font-size: 24em;
 }
 #moon {
+    font-size: 14em;
+}
+#phobos {
     font-size: 4em;
+}
+#deimos{
+    font-size: 5em;
 }
 
 /* Planet shadow animations */
@@ -153,30 +223,31 @@ body {
     animation-duration: 8s; }
 
 
+
 @keyframes shadow-moon {
-    0% {
-        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-        /* TOP */ }
+    /*0% {*/
+    /*    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);*/
+    /*    !* TOP *! }*/
 
-    25% {
-        box-shadow: inset 16px 0 8px rgba(0, 0, 0, 0.5);
-        /* LEFT */ }
+    /*25% {*/
+    /*    box-shadow: inset 16px 0 8px rgba(0, 0, 0, 0.5);*/
+    /*    !* LEFT *! }*/
 
-    50% {
-        box-shadow: inset 40px -20px 16px rgba(0, 0, 0, 0.5);
-        /* BOTTOM */ }
+    /*50% {*/
+    /*    box-shadow: inset 40px -20px 16px rgba(0, 0, 0, 0.5);*/
+    /*    !* BOTTOM *! }*/
 
-    50.01% {
-        box-shadow: inset -40px -20px 16px rgba(0, 0, 0, 0.5);
-        /* BOTTOM */ }
+    /*50.01% {*/
+    /*    box-shadow: inset -40px -20px 16px rgba(0, 0, 0, 0.5);*/
+    /*    !* BOTTOM *! }*/
 
-    75% {
-        box-shadow: inset -16px 0 8px rgba(0, 0, 0, 0.5);
-        /* RIGHT */ }
+    /*75% {*/
+    /*    box-shadow: inset -16px 0 8px rgba(0, 0, 0, 0.5);*/
+    /*    !* RIGHT *! }*/
 
-    100% {
-        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-        /* TOP */ }
+    /*100% {*/
+    /*    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);*/
+    /*    !* TOP *! }*/
 }
 
 
@@ -188,10 +259,30 @@ body {
 
 }
 
-.planet {
-    background-image: url("../images/lune.png");
+#mars {
+    background-image: url("../images/mars.png");
+
 }
 
+/*.planet {
+    background-image: url("../images/lune.png");
+}*/
+/*.planet {
+    background-image: url("../images/phobos.png");
+}*/
+
+#phobos-satellite{
+    background-image: url("../images/phobos.png");
+}
+
+#moon-satellite{
+    background-image: url("../images/lune.png");
+
+}
+#deimos-satellite{
+    background-image: url("../images/deimos.png");
+
+}
 
 
 #universe {

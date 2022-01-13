@@ -14,17 +14,30 @@ const Space = () => {
         <section>
 
             <div id="universe">
-                <div id="galaxy">
+                <div id="system-alpha">
 
                     <div id="earth">
                     </div>
 
                     <div id="moon" className="orbit">
                         <div className="pos">
-                            <div className="planet"></div>
+                            <div className="planet" id="moon-satellite"></div>
                         </div>
                     </div>
 
+                </div>
+                <div id="system-beta">
+                    <div id="mars"></div>
+                    <div id="phobos" className="satellite orbit">
+                        <div className="pos">
+                            <div className="planet" id="phobos-satellite"></div>
+                        </div>
+                    </div>
+                    <div id="deimos" className="satellite orbit">
+                        <div className="pos">
+                            <div className="planet" id="deimos-satellite"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <h2 className="container">Moi</h2>
