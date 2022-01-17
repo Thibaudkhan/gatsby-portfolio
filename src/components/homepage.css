@@ -1,0 +1,45 @@
+.space{
+    background-color: black;
+
+
+}
+
+.sun{
+    background-image: url("../images/sun1.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.container{
+    /*background-image: url("../images/ceinture2.png");
+    background-size: cover;*/
+    height: 2500px;
+    width: 2500px
+}
+.planete{
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 33%;
+    background-position: center;
+
+}
+
+#earth{
+    background-image: url("../images/terre.png");
+    transform: translateX(10%) translateY(100%) translateX(100%) translateY(100%);
+}
+#mars{
+    background-image: url("../images/mars.png");
+    top: 40px; left: 40px;
+    height: 200px;
+    width: 33%;
+    transform: translateX(100%) translateY(100%) translateX(150%) translateY(100%);
+}
+#moon{
+    background-image: url("../images/lune.png");
+    height: 150px;
+    width: 33%;
+    transform: translateX(10%) translateY(100%) translateX(100%) translateY(150%);
+}
